@@ -1,6 +1,7 @@
 package com.plugin;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 
@@ -21,7 +22,7 @@ import android.content.pm.PackageManager;
 public class MainActivity extends CordovaPlugin{
 
     private CallbackContext callbackContext;
-
+    private Intent intent = null;
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
