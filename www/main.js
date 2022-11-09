@@ -4,6 +4,9 @@ var exec = require('cordova/exec');
 exports.getVersion = function (success, error) {
     exec(success, error, 'MainActivity', 'getVersion');
 };
+exports.getAppsInstalados = function (success, error) {
+    exec(success, error, 'MainActivity', 'getAppsInstalados');
+};
 exports.pagamento = function (params, success, error) {
     exec(success, error, 'MainActivity', 'pagamento', [params]);
 };

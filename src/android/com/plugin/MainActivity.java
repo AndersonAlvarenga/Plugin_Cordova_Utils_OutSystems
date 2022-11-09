@@ -2,6 +2,7 @@ package com.plugin;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.util.Log;
 
 
@@ -16,6 +17,9 @@ import org.json.JSONException;
 import android.os.Handler;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.PackageManager;
+
+import java.util.List;
+
 
 
 //---------------------------------------------------------------
@@ -49,6 +53,22 @@ public class MainActivity extends CordovaPlugin{
 
             }catch (Exception e){
                 callbackContext.error("Erro getVersion"+e.getMessage());
+            }
+            return true;
+        }
+        if (action.equals("getAppsInstalados")) {
+            try{
+                PackageManager packageManager= cordova.getActivity().getPackageManager();
+                List<ApplicationInfo> list = packageManager.getInstalledApplications(PackageManager.GET_META_DATA);
+                String values = "";
+                for(ApplicationInfo ap:list){
+                    values += values == ""?"":"\n";
+                    values+=ap.packageName;
+                }
+                callbackContext.success(values);
+
+            }catch (Exception e){
+                callbackContext.error("Erro getAppsInstalados"+e.getMessage());
             }
             return true;
         }
