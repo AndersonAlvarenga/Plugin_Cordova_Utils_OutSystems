@@ -40,7 +40,7 @@ public class MainActivity extends CordovaPlugin{
         this.callbackContext = callbackContext;
         intent = null;
         //Metodos Pagamento
-        if (action.equals("getListAppInstalados")) {
+        if (action.equals("getAppsInstalados")) {
             PackageManager packageManager=cordova.getActivity().getPackageManager();
             List<ApplicationInfo> list = packageManager.getInstalledApplications(PackageManager.GET_META_DATA);
             String values = "";
