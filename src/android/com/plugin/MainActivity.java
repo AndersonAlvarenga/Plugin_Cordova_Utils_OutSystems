@@ -62,7 +62,7 @@ public class MainActivity extends CordovaPlugin{
                 List<ApplicationInfo> list = packageManager.getInstalledApplications(PackageManager.GET_META_DATA);
                 String values = "";
                 for(ApplicationInfo ap:list){
-                    values += values == ""?"":"\n";
+                    values += values == ""?"":" ";
                     values+=ap.packageName;
                 }
                 callbackContext.success(values);
