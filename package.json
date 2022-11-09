@@ -1,29 +1,17 @@
 {
-  "name": "cordova-plugin-appversion",
-  "version": "1.1.1",
-  "description": "Access the native app version & build number in JavaScript",
+  "name": "cordova-plugin-gpos7centos",
+  "version": "0.0.2",
+  "description": "",
   "cordova": {
-    "id": "cordova-plugin-appversion",
+    "id": "cordova-plugin-gpos7centos",
     "platforms": [
-      "android",
-      "ios"
+      "android"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/davipcruz/cordova-plugin-app-version.git"
-  },
   "keywords": [
-    "cordova",
-    "appversion",
     "ecosystem:cordova",
-    "cordova-ios",
     "cordova-android"
   ],
-  "author": "Rareloop (http://rareloop.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/davidpcruz/cordova-plugin-app-version/issues"
-  },
-  "homepage": "https://github.com/davidpcruz/cordova-plugin-app-version"
+  "author": "",
+  "license": "ISC"
 }

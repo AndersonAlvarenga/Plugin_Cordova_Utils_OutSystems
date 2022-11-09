@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/cordova-plugin-app-version-master.iml" filepath="$PROJECT_DIR$/cordova-plugin-app-version-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cordova-plugin-gpos7centos.iml" filepath="$PROJECT_DIR$/cordova-plugin-gpos7centos.iml" />
     </modules>
   </component>
 </project>
