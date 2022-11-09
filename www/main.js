@@ -7,19 +7,6 @@ exports.getVersion = function (success, error) {
 exports.getAppsInstalados = function (success, error) {
     exec(success, error, 'MainActivity', 'getAppsInstalados');
 };
-exports.pagamento = function (params, success, error) {
-    exec(success, error, 'MainActivity', 'pagamento', [params]);
+exports.deleteApp = function (params, success, error) {
+    exec(success, error, 'MainActivity', 'deleteApp', [params]);
 };
-exports.GetStringImpressao = function (success, error) {
-    exec(success, error, 'MainActivity', 'GetStringImpressao');
-};
-exports.limpaTransacao = function (success, error) {
-    exec(success, error, 'MainActivity', 'limpaTransacao');
-};
-exports.cancelarTransacao = function (success, error) {
-    exec(success, error, 'MainActivity', 'cancelarTransacao');
-};
-exports.GetDadosTransacao = function (success, error) {
-    exec(success, error, 'MainActivity', 'GetDadosTransacao');
-};
-

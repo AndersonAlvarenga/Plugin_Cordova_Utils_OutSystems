@@ -3,6 +3,7 @@ package com.plugin;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
+import android.net.Uri;
 import android.util.Log;
 
 
@@ -13,6 +14,7 @@ import org.apache.cordova.CordovaWebView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.os.Handler;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -73,6 +75,22 @@ public class MainActivity extends CordovaPlugin{
             return true;
         }
 
+        if (action.equals("deleteApp")) {
+            //Seta valores recebidos as variaveis de configuração
+            try {
+                JSONObject params = args.getJSONObject(0);
+                String pacote = params.getString("pacote");
+                Intent intent = new Intent(Intent.ACTION_DELETE);
+                intent.setData(Uri.parse("package:"+pacote));
+                cordova.getActivity().startActivity(intent);
+                callbackContext.success("Aplicativo Deletado");
+
+            }catch (Exception e){
+                callbackContext.error("Erro ao deletar aplicativo: "+e.getMessage());
+            }
+
+            return true;
+        }
         return false; // Returning false results in a "MethodNotFound" error.
     }
 
