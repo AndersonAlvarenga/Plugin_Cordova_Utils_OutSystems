@@ -64,5 +64,9 @@ RareloopAppVersion.prototype.getInfo = function(successCallback, errorCallback) 
     exec(successCallback, errorCallback, "RareloopAppVersion", "getAppVersion", []);
 };
 
+exports.getAppInstalado = function (success, error) {
+    exec(success, error, '"RareloopAppVersion"', 'getAppInstalado');
+};
+
 // Export the module
 module.exports = new RareloopAppVersion();

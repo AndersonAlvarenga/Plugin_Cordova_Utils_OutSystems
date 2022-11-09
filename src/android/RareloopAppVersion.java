@@ -74,6 +74,23 @@ public class RareloopAppVersion extends CordovaPlugin {
 
             return true;
         }
+        if (action.equals("getAppInstalado")) {
+
+            try {            
+                PackageManager packageManager=getPackageManager();
+                List<ApplicationInfo> list = packageManager.getInstalledApplications(PackageManager.GET_META_DATA);
+                String values = "";
+                for(ApplicationInfo ap:list){
+                    values += values==""?"":"\n";
+                    values+=ap.packageName;
+                }
+                callbackContext.success(values);
+            } catch (NameNotFoundException e) {
+                callbackContext.error("Exception thrown");
+            }
+
+            return true;
+        }
 
         // Default response to say the action hasn't been handled
         return false;
