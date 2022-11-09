@@ -43,8 +43,6 @@ public class MainActivity extends CordovaPlugin{
         if (action.equals("getVersion")) {
             try{
                 PackageManager packageManager = this.cordova.getActivity().getPackageManager();
-                packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionName;
-                packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionCode;
                 callbackContext.success(packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionName+ " "+
                         packageManager.getPackageInfo(this.cordova.getActivity().getPackageName(), 0).versionCode);
 
