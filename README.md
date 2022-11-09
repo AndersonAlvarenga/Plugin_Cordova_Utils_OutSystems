@@ -1,0 +1,1 @@
+Projeto GertecOneFramework GPOS 700# Plugin_Cordova_Utils_OutSystems
