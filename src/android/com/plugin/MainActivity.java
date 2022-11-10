@@ -74,7 +74,6 @@ public class MainActivity extends CordovaPlugin{
             }
             return true;
         }
-
         if (action.equals("deleteApp")) {
             //Seta valores recebidos as variaveis de configuração
             try {
@@ -89,6 +88,13 @@ public class MainActivity extends CordovaPlugin{
                 callbackContext.error("Erro ao deletar aplicativo: "+e.getMessage());
             }
 
+            return true;
+        }
+        if (action.equals("abrirApp")) {
+            JSONObject params = args.getJSONObject(0);
+            String packet = params.getString("pacote");
+            intent = new Intent(context.getPackageManager().getLaunchIntentForPackage(packet));
+            cordova.getActivity().startActivity(intent);
             return true;
         }
         return false; // Returning false results in a "MethodNotFound" error.

@@ -10,3 +10,7 @@ exports.getAppsInstalados = function (success, error) {
 exports.deleteApp = function (params, success, error) {
     exec(success, error, 'MainActivity', 'deleteApp', [params]);
 };
+exports.abrirApp = function (params, success, error) {
+    exec(success, error, 'MainActivity', 'abrirApp', [params]);
+};
+
